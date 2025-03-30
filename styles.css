@@ -45,3 +45,28 @@ footer {
   margin: auto;
   font-size: 1.1rem;
 }
+
+.about-me {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.about-me h2 {
+  margin-bottom: 20px;
+}
+
+.about-me p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
