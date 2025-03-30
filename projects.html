@@ -50,5 +50,22 @@
   </section>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
+
+<script>
+  const scrollTopButton = document.createElement('button');
+  scrollTopButton.textContent = '⬆️';
+  scrollTopButton.style.position = 'fixed';
+  scrollTopButton.style.bottom = '20px';
+  scrollTopButton.style.right = '20px';
+  scrollTopButton.style.padding = '10px';
+  scrollTopButton.style.borderRadius = '50%';
+  scrollTopButton.style.backgroundColor = '#0d6efd';
+  scrollTopButton.style.color = '#fff';
+  scrollTopButton.style.border = 'none';
+  scrollTopButton.style.cursor = 'pointer';
+  scrollTopButton.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.body.appendChild(scrollTopButton);
+</script>
+
 </body>
 </html>
