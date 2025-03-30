@@ -1,71 +1,29 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects - Jaylen Neduelan</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Projects | Jaylen Neduelan</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="gradient-bg">
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Jaylen Neduelan</a>
-      <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
-  <section class="container my-5 text-center text-white">
-    <h1 data-aos="fade-down">Projects</h1>
-    <div class="row mt-4">
-      <div class="col-md-4" data-aos="fade-up">
-        <div class="card project-card">
-          <div class="card-body">
-            <h3>Business Analyst Internship</h3>
-            <p>Gathered requirements and created user stories at TriumphPay.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card project-card">
-          <div class="card-body">
-            <h3>Triumph IT PM Internship</h3>
-            <p>Supported project management processes and KPIs development.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card project-card">
-          <div class="card-body">
-            <h3>CSCE 4110 School Project</h3>
-            <p>Implemented advanced algorithms in Java and Python.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
-<script>
-  const scrollTopButton = document.createElement('button');
-  scrollTopButton.textContent = '⬆️';
-  scrollTopButton.style.position = 'fixed';
-  scrollTopButton.style.bottom = '20px';
-  scrollTopButton.style.right = '20px';
-  scrollTopButton.style.padding = '10px';
-  scrollTopButton.style.borderRadius = '50%';
-  scrollTopButton.style.backgroundColor = '#0d6efd';
-  scrollTopButton.style.color = '#fff';
-  scrollTopButton.style.border = 'none';
-  scrollTopButton.style.cursor = 'pointer';
-  scrollTopButton.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-  document.body.appendChild(scrollTopButton);
-</script>
-
+  <main>
+    <h1>Projects</h1>
+    <ul>
+      <li>Sonify for Graphs – BA Intern Project</li>
+      <li>Tomorrow’s Leaders Today – Data Visualization Dashboard</li>
+      <li>Personal Portfolio Website – Hosted on AWS Amplify</li>
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; 2025 Jaylen Neduelan</p>
+  </footer>
 </body>
 </html>

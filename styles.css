@@ -1,67 +1,28 @@
 
-:root {
-  --bs-body-bg: linear-gradient(135deg, #0d1117, #1f2937);
-}
-
 body {
-  background: var(--bs-body-bg);
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #cce3f6, #a8c4f8);
+  color: #222;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
-
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.4rem;
+nav {
+  background: #003366;
+  color: white;
+  padding: 1rem;
 }
-
-.nav-link {
-  color: #ddd !important;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
-
-.nav-link:hover {
-  color: #0d6efd !important;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #0d6efd;
-}
-
-.about-me {
-  text-align: center;
-}
-
-.skills strong {
-  font-size: 1.2rem;
-  background: #0d6efd;
-  padding: 10px 15px;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-.project-card {
-  background: #21262d;
-  color: #fff;
-  border: none;
-  margin: 15px;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.social-links a {
-  color: #0d6efd;
-  margin: 0 10px;
+nav a {
+  color: white;
   text-decoration: none;
+  font-weight: bold;
 }
-
-.social-links a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  background-color: #21262d;
-  margin-top: 40px;
+header, main, footer {
+  text-align: center;
+  margin: 2rem;
 }
