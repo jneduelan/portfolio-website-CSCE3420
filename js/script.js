@@ -4,6 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.opacity = 1;
   }, 100);
   
+  // Check for saved theme preference or use preferred color scheme
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.body.classList.add('dark');
+    updateThemeToggleIcon(true);
+  }
+  
   // Mobile menu toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -13,6 +22,26 @@ document.addEventListener('DOMContentLoaded', function() {
       navLinks.classList.toggle('active');
       menuToggle.classList.toggle('active');
     });
+  }
+  
+  // Theme toggle
+  const themeToggle = document.querySelector('.theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateThemeToggleIcon(isDark);
+    });
+  }
+  
+  function updateThemeToggleIcon(isDark) {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+      themeToggle.innerHTML = isDark 
+        ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+    }
   }
   
   // Button hover effects
@@ -37,6 +66,100 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  
+  // Project filters
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Get filter value
+        const filter = button.getAttribute('data-filter');
+        
+        // Filter projects
+        projectCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'block';
+          } else {
+            const tags = card.getAttribute('data-tags');
+            if (tags && tags.includes(filter)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  }
+  
+  // Animate skill bars
+  const skillBars = document.querySelectorAll('.skill-progress');
+  
+  function animateSkillBars() {
+    skillBars.forEach(bar => {
+      const percentage = bar.getAttribute('data-percentage');
+      bar.style.width = percentage;
+    });
+  }
+  
+  // Animate elements when they come into view
+  const animateElements = document.querySelectorAll('.animate-in');
+  
+  function checkScroll() {
+    animateElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementTop < windowHeight - 50) {
+        element.style.opacity = 1;
+      }
+    });
+    
+    // Animate skill bars when in view
+    const skillsSection = document.querySelector('.skills-grid');
+    if (skillsSection) {
+      const sectionTop = skillsSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (sectionTop < windowHeight - 100) {
+        animateSkillBars();
+      }
+    }
+  }
+  
+  // Scroll to top button
+  const scrollTopBtn = document.querySelector('.scroll-top');
+  
+  function toggleScrollButton() {
+    if (window.pageYOffset > 300) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  }
+  
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    window.addEventListener('scroll', toggleScrollButton);
+  }
+  
+  // Check for elements in view on page load and scroll
+  window.addEventListener('load', checkScroll);
+  window.addEventListener('scroll', checkScroll);
   
   // Interactive background
   const canvas = document.getElementById('background-canvas');
@@ -63,18 +186,27 @@ document.addEventListener('DOMContentLoaded', function() {
       particles = [];
       
       for (let i = 0; i < particleCount; i++) {
+        const isDark = document.body.classList.contains('dark');
+        const baseColor = isDark ? '60, 165, 250' : '37, 99, 235';
+        
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 5 + 1,
           speedX: (Math.random() - 0.5) * 0.5,
           speedY: (Math.random() - 0.5) * 0.5,
-          color: `rgba(100, 149, 237, ${Math.random() * 0.5 + 0.1})` // Cornflower blue with varying opacity
+          color: `rgba(${baseColor}, ${Math.random() * 0.5 + 0.1})`
         });
       }
     }
     
     createParticles();
+    
+    // Update particles color on theme change
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', createParticles);
+    }
     
     // Update particles
     function updateParticles() {
@@ -127,7 +259,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       // Draw connections
-      ctx.strokeStyle = 'rgba(100, 149, 237, 0.1)';
+      const isDark = document.body.classList.contains('dark');
+      const connectionColor = isDark ? 'rgba(96, 165, 250, 0.1)' : 'rgba(37, 99, 235, 0.1)';
+      ctx.strokeStyle = connectionColor;
       ctx.lineWidth = 0.5;
       
       for (let i = 0; i < particles.length; i++) {
@@ -170,11 +304,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.addEventListener('mousemove', handleMouseMove);
-    
-    // Background position effect from original script
-    window.addEventListener('mousemove', (e) => {
-      document.body.style.backgroundPosition = `${e.clientX / 50}px ${e.clientY / 50}px`;
-    });
   }
   
   // Form submission
