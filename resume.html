@@ -4,24 +4,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume</title>
+  <title>Resume | Jaylen Neduelan</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <canvas id="background-canvas"></canvas>
+  
   <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <div class="logo">JN</div>
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="resume.html" class="active">RESUME</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+      <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
   </nav>
-  <section class="resume">
-    <h1>Resume</h1>
-    <ul>
-      <li><strong>Experience:</strong> Business Analyst Intern at TLT, IT PM Intern at Triumph Financial, Envoy Air</li>
-      <li><strong>Education:</strong> UNT, B.S. in Computer Science, GPA 3.75</li>
-      <li><strong>Skills:</strong> Python, SQL, Java, HTML/CSS, AWS, Tableau, Project Management</li>
-    </ul>
-    <a href="resume.pdf" download>Download Resume</a>
-  </section>
+  
+  <main class="content">
+    <a href="index.html" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      BACK TO HOME
+    </a>
+    
+    <h1 class="page-title">RESUME</h1>
+    
+    <div class="resume-container">
+      <div class="resume-section">
+        <h2>EXPERIENCE</h2>
+        <div class="resume-card">
+          <h3>Business Analyst Intern</h3>
+          <p class="resume-meta">TLT - Tomorrow's Leaders Today | Jan 2025 - April 2025</p>
+          <ul class="resume-list">
+            <li>Developed 10+ KPIs and a data strategy to measure 50+ organizational programs.</li>
+            <li>Designed logic models aligning programs with strategic goals, improving reporting efficiency by 10%.</li>
+            <li>Analyzed data and created monthly impact reports, driving data-driven decision-making for stakeholders.</li>
+          </ul>
+        </div>
+        
+        <div class="resume-card">
+          <h3>IT Project Management Intern</h3>
+          <p class="resume-meta">Triumph Financial | June 2024 - August 2024</p>
+          <ul class="resume-list">
+            <li>Developed automated asset reports using SQL in Freshservice CMDB, improving data accuracy from 70% to 95%.</li>
+            <li>Managed data for 600+ assets, including EOL information and warranties, reducing unplanned asset purchases by 30%.</li>
+            <li>Created and documented knowledge base articles on asset management and purchase order processes.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="resume-section">
+        <h2>EDUCATION</h2>
+        <div class="resume-card">
+          <h3>Bachelor of Science, Computer Science</h3>
+          <p class="resume-meta">The University of North Texas, Denton, TX | August 2021 - May 2025</p>
+          <ul class="resume-list">
+            <li>GPA: 3.75</li>
+            <li>Relevant Coursework: Software Engineering, Data Structures & Algorithms, Operating Systems, Systems Programming</li>
+            <li>Honors & Awards: UNT Excellence Scholarship (Fall 2021-Present), Dean's/President's List (6 semesters)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="resume-section">
+        <h2>SKILLS</h2>
+        <div class="skills-grid">
+          <div class="skills-card">
+            <h3>Programming Languages</h3>
+            <div class="skills-tags">
+              <span>Python</span>
+              <span>C/C++</span>
+              <span>Java</span>
+              <span>SQL</span>
+              <span>HTML/CSS/JS</span>
+            </div>
+          </div>
+          
+          <div class="skills-card">
+            <h3>Tools & Technologies</h3>
+            <div class="skills-tags">
+              <span>Git</span>
+              <span>AWS</span>
+              <span>Tableau</span>
+              <span>Power BI</span>
+              <span>Freshservice</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="download-resume">
+        <a href="resume.pdf" download class="btn">
+          DOWNLOAD RESUME
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+  
+  <script src="js/script.js"></script>
 </body>
 </html>
