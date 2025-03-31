@@ -923,4 +923,155 @@ ul {
     width: 40px;
     height: 40px;
   }
+  /* Add these new styles to your existing CSS file */
+
+/* Hero Name Styles */
+.hero-name-container {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.hero-name {
+  font-size: clamp(3rem, 15vw, 10rem);
+  font-weight: 900;
+  text-align: center;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInScale 1.2s ease-out forwards;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
+  color: var(--text-light);
+  margin: 1rem 0 2rem;
+  letter-spacing: 0.1em;
+  animation: fadeIn 1.5s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* Enhanced profile container */
+.profile-container {
+  width: 180px;
+  height: 180px;
+  margin: 3rem auto;
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+/* Floating animation for profile */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced hero layout */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* New animations */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Enhanced particles for background */
+.large-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+  filter: blur(2px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Bio text enhancements */
+.bio {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  animation: fadeIn 1.5s ease-out 0.8s forwards;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced buttons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  animation: fadeIn 1.5s ease-out 1s forwards;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.btn {
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced social links */
+.social-links {
+  animation: fadeIn 1.5s ease-out 1.2s forwards;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: clamp(2.5rem, 12vw, 8rem);
+  }
+  
+  .profile-container {
+    width: 150px;
+    height: 150px;
+    margin: 2rem auto;
+  }
 }
