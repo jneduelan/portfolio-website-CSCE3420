@@ -1,1 +1,29 @@
-/* Main CSS will go here */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #cce3f6, #a8c4f8);
+  color: #222;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: #003366;
+  padding: 1rem;
+}
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #a8c4f8;
+}
+header, main, footer {
+  text-align: center;
+  padding: 2rem;
+}
+footer {
+  background: #f8f9fa;
+}
