@@ -22,6 +22,11 @@
         <a href="resume.html" class="active">RESUME</a>
         <a href="contact.html">CONTACT</a>
       </div>
+      <div class="theme-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </div>
       <div class="menu-toggle">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -39,10 +44,10 @@
       BACK TO HOME
     </a>
     
-    <h1 class="page-title">RESUME</h1>
+    <h1 class="page-title animate-in">RESUME</h1>
     
     <div class="resume-container">
-      <div class="resume-section">
+      <div class="resume-section animate-in delay-1">
         <h2>EXPERIENCE</h2>
         <div class="resume-card">
           <h3>Business Analyst Intern</h3>
@@ -65,7 +70,7 @@
         </div>
       </div>
       
-      <div class="resume-section">
+      <div class="resume-section animate-in delay-2">
         <h2>EDUCATION</h2>
         <div class="resume-card">
           <h3>Bachelor of Science, Computer Science</h3>
@@ -78,35 +83,95 @@
         </div>
       </div>
       
-      <div class="resume-section">
+      <div class="resume-section animate-in delay-3">
         <h2>SKILLS</h2>
         <div class="skills-grid">
           <div class="skills-card">
             <h3>Programming Languages</h3>
-            <div class="skills-tags">
-              <span>Python</span>
-              <span>C/C++</span>
-              <span>Java</span>
-              <span>SQL</span>
-              <span>HTML/CSS/JS</span>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Python</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-percentage="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>SQL</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-percentage="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Java</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-percentage="75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>HTML/CSS/JS</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-percentage="80%"></div>
+              </div>
             </div>
           </div>
           
           <div class="skills-card">
             <h3>Tools & Technologies</h3>
-            <div class="skills-tags">
-              <span>Git</span>
-              <span>AWS</span>
-              <span>Tableau</span>
-              <span>Power BI</span>
-              <span>Freshservice</span>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Git</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-percentage="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>AWS</span>
+                <span>70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-percentage="70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Tableau</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-percentage="80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Power BI</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-percentage="75%"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       
-      <div class="download-resume">
+      <div class="download-resume animate-in delay-4">
         <a href="resume.pdf" download class="btn">
+          DOWNLOAD RESUME
+          <svg xmlns="http://www.w3.org/  download class="btn">
           DOWNLOAD RESUME
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -117,6 +182,22 @@
       </div>
     </div>
   </main>
+  
+  <footer class="footer">
+    <p>&copy; 2025 Jaylen Neduelan. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+  
+  <div class="scroll-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </div>
   
   <script src="js/script.js"></script>
 </body>
