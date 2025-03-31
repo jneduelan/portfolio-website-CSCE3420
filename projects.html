@@ -22,6 +22,11 @@
         <a href="resume.html">RESUME</a>
         <a href="contact.html">CONTACT</a>
       </div>
+      <div class="theme-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </div>
       <div class="menu-toggle">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -39,10 +44,17 @@
       BACK TO HOME
     </a>
     
-    <h1 class="page-title">PROJECTS</h1>
+    <h1 class="page-title animate-in">PROJECTS</h1>
+    
+    <div class="project-filters animate-in delay-1">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="sql">SQL</button>
+      <button class="filter-btn" data-filter="web">Web Development</button>
+    </div>
     
     <div class="projects-grid">
-      <div class="project-card">
+      <div class="project-card animate-in delay-2" data-tags="sql,database">
         <h2>Asset Management Automation</h2>
         <p class="project-meta">Triumph Financial | Summer 2024</p>
         <p class="project-description">
@@ -55,7 +67,7 @@
         </div>
       </div>
       
-      <div class="project-card">
+      <div class="project-card animate-in delay-3" data-tags="python,web,nextjs">
         <h2>Sonify for Graphs</h2>
         <p class="project-meta">University of North Texas | Sept 2024 – Apr 2025</p>
         <p class="project-description">
@@ -69,7 +81,7 @@
         </div>
       </div>
       
-      <div class="project-card">
+      <div class="project-card animate-in delay-4" data-tags="python,ai,ml">
         <h2>Sentiment Analysis with BERT and CNN Models</h2>
         <p class="project-meta">University of North Texas | Spring 2024</p>
         <p class="project-description">
@@ -84,6 +96,22 @@
       </div>
     </div>
   </main>
+  
+  <footer class="footer">
+    <p>&copy; 2025 Jaylen Neduelan. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+  
+  <div class="scroll-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </div>
   
   <script src="js/script.js"></script>
 </body>
