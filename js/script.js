@@ -3,7 +3,101 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(() => {
     document.body.style.opacity = 1;
   }, 100);
+  // Add this code to your existing script.js file, after the DOMContentLoaded event listener
+
+// Enhanced background with larger particles
+function createLargeParticles() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
   
+  // Remove any existing large particles
+  document.querySelectorAll('.large-particle').forEach(el => el.remove());
+  
+  const particleCount = window.innerWidth < 768 ? 5 : 8;
+  const colors = ['rgba(37, 99, 235, 0.1)', 'rgba(124, 58, 237, 0.08)', 'rgba(255, 255, 255, 0.12)'];
+  
+  for (let i = 0; i < particleCount; i++) {
+    const size = Math.random() * 200 + 100; // 100-300px
+    const particle = document.createElement('div');
+    particle.classList.add('large-particle');
+    
+    // Random position
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    
+    // Random color
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    
+    // Random opacity
+    particle.style.opacity = (Math.random() * 0.5 + 0.2).toString();
+    
+    // Random animation
+    const duration = Math.random() * 60 + 30; // 30-90s
+    particle.style.animation = `float ${duration}s ease-in-out infinite`;
+    particle.style.animationDelay = `${Math.random() * -30}s`;
+    
+    // Add to hero
+    hero.appendChild(particle);
+  }
+}
+
+// Update canvas particles to be larger
+function updateCanvasParticles() {
+  const canvas = document.getElementById('background-canvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  
+  // Create particles with larger sizes
+  function createEnhancedParticles() {
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 30 : 60;
+    particles = [];
+    
+    for (let i = 0; i < particleCount; i++) {
+      const isDark = document.body.classList.contains('dark');
+      const baseColor = isDark ? '60, 165, 250' : '37, 99, 235';
+      
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 8 + 2, // Larger particles: 2-10px
+        speedX: (Math.random() - 0.5) * 0.3,
+        speedY: (Math.random() - 0.5) * 0.3,
+        color: `rgba(${baseColor}, ${Math.random() * 0.5 + 0.1})`
+      });
+    }
+  }
+  
+  // Override the existing createParticles function if it exists
+  if (typeof createParticles === 'function') {
+    createParticles = createEnhancedParticles;
+    // Call it to refresh particles
+    createParticles();
+  }
+}
+
+// Call these functions when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+  createLargeParticles();
+  updateCanvasParticles();
+  
+  // Recreate particles on window resize
+  window.addEventListener('resize', function() {
+    createLargeParticles();
+  });
+  
+  // Split the name into individual letters for animation
+  const nameElement = document.querySelector('.hero-name');
+  if (nameElement) {
+    const name = nameElement.textContent;
+    nameElement.innerHTML = name.split('').map(letter => 
+      `<span style="display:inline-block; animation: fadeInScale 1.5s ease-out ${Math.random() * 0.5}s forwards;">${letter}</span>`
+    ).join('');
+  }
+});
   // Check for saved theme preference or use preferred color scheme
   const savedTheme = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
